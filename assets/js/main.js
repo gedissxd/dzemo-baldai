@@ -18,8 +18,8 @@
     lt: {
       sending: 'Siunčiama…',
       ok: 'Ačiū! Jūsų užklausa išsiųsta – netrukus su Jumis susisieksime.',
-      error: 'Užklausos išsiųsti nepavyko. Pabandykite dar kartą arba paskambinkite (8-655) 42501.',
-      notConnected: 'Forma dar neprijungta prie el. pašto. Kol kas paskambinkite (8-655) 42501.',
+      error: 'Užklausos išsiųsti nepavyko. Pabandykite dar kartą arba paskambinkite (0-655) 42501.',
+      notConnected: 'Forma dar neprijungta prie el. pašto. Kol kas paskambinkite (0-655) 42501.',
       okNoFile: 'Ačiū! Užklausa išsiųsta, tačiau failo pridėti nepavyko – paprašysime jo susisiekę.',
       tooBig: 'Failas per didelis (daugiausia {n} MB): ',
       empty: 'Šioje kategorijoje darbų dar nėra.'
