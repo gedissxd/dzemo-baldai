@@ -9,7 +9,7 @@
      Kol reikšmė tuščia, forma NIEKO nesiunčia ir lankytojui parodo aiškų pranešimą.
      ------------------------------------------------------------------ */
   var CONFIG = {
-    formEndpoint: '',
+    formEndpoint: 'https://formspree.io/f/mwlovakk',
     maxFileMB: 10
   };
 
@@ -20,6 +20,7 @@
       ok: 'Ačiū! Jūsų užklausa išsiųsta – netrukus su Jumis susisieksime.',
       error: 'Užklausos išsiųsti nepavyko. Pabandykite dar kartą arba paskambinkite (8-655) 42501.',
       notConnected: 'Forma dar neprijungta prie el. pašto. Kol kas paskambinkite (8-655) 42501.',
+      okNoFile: 'Ačiū! Užklausa išsiųsta, tačiau failo pridėti nepavyko – paprašysime jo susisiekę.',
       tooBig: 'Failas per didelis (daugiausia {n} MB): ',
       empty: 'Šioje kategorijoje darbų dar nėra.'
     },
@@ -28,6 +29,7 @@
       ok: 'Thank you! Your request has been sent – we will get back to you shortly.',
       error: 'The request could not be sent. Please try again or call +370 655 42501.',
       notConnected: 'The form is not connected to an inbox yet. For now, please call +370 655 42501.',
+      okNoFile: 'Thank you! Your request was sent, but the file could not be attached – we will ask for it when we contact you.',
       tooBig: 'File is too large (max {n} MB): ',
       empty: 'No projects in this category yet.'
     }
@@ -154,12 +156,25 @@
       submit.disabled = true;
       submit.textContent = T.sending;
       setStatus('', '');
-      fetch(CONFIG.formEndpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-        .then(function (res) {
-          if (!res.ok) throw new Error('HTTP ' + res.status);
+      var send = function (data) {
+        return fetch(CONFIG.formEndpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+          .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); });
+      };
+      var hasFiles = fileInput.files.length > 0;
+      var okText = T.ok;
+      send(new FormData(form))
+        .catch(function (err) {
+          // Jei formų paslauga nepriima failų, užklausą siunčiame be jų
+          if (!hasFiles) throw err;
+          var data = new FormData(form);
+          data.delete('attachment');
+          okText = T.okNoFile;
+          return send(data);
+        })
+        .then(function () {
           form.reset();
           fileList.innerHTML = '';
-          setStatus('ok', T.ok);
+          setStatus('ok', okText);
         })
         .catch(function () { setStatus('error', T.error); })
         .then(function () {

@@ -48,7 +48,7 @@ Gallery items are the `<figure class="work" data-cat="…">` blocks in the `#dar
 
 ## Quote form
 
-A static site cannot send email by itself, so the form needs a receiving address. Until one is set, the form sends nothing and tells the visitor to phone instead.
+A static site cannot send email by itself, so the form needs a receiving address. It is currently connected to Formspree (`CONFIG.formEndpoint` in `assets/js/main.js`). If a file cannot be attached (Formspree free plan), the request is re-sent without it and the visitor is told so.
 
 1. Create a form endpoint with a form service (for example Formspree, Web3Forms or Getform – check that the plan supports file uploads) or use a script on your own hosting.
 2. Paste the address into `CONFIG.formEndpoint` at the top of `assets/js/main.js`.
