@@ -26,14 +26,10 @@ Everything still to be filled in is highlighted in yellow on the page and marked
 
 | What | Where |
 | --- | --- |
-| Working hours | Contact section and footer – search for `DARBO LAIK` / `WORKING HOURS` |
 | Exact address | Contact section; also the map `iframe` (`q=Klaipėda` → `q=Street+No,+Klaipėda`) |
-| Email address | Contact section |
-| Facebook page link | Replace every `FACEBOOK-PUSLAPIS` with the real page address |
-| Customer reviews | Section `#atsiliepimai` – three dashed placeholder cards. Use real reviews only; remove the `quote--placeholder` class and the `todo` spans |
+| Customer reviews | Section `#atsiliepimai` currently links to Facebook. Real reviews can be added as `<li class="quote">` cards inside a `<ul class="quotes">` |
 | Photos | See below |
 | Quote form inbox | See below |
-| Privacy policy | Footer – link to a policy page once it exists |
 | Domain | In `<head>`, uncomment the `canonical` / `hreflang` / `og:` block and replace `JUSU-DOMENAS.lt` |
 
 ## Photos
