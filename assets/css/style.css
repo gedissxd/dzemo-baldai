@@ -171,14 +171,6 @@ a:hover .link-arrow svg, .link-arrow:hover svg { transform: translateX(4px); }
 /* ---------- Nuotraukų rėmelis ---------- */
 .media { position: relative; display: block; overflow: hidden; border-radius: var(--radius); background: var(--sand); aspect-ratio: 4 / 3; }
 .media img { width: 100%; height: 100%; object-fit: cover; }
-/* Kol naudojamos .svg iliustracijos, automatiškai rodoma žyma. Įkėlus tikrą .jpg/.webp nuotrauką ji dingsta. */
-.media:has(img[src$=".svg"])::after {
-  content: "Vieta nuotraukai";
-  position: absolute; left: 12px; bottom: 12px;
-  font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1;
-  background: rgba(42, 40, 38, .8); color: #fff; padding: 7px 10px; border-radius: 999px; pointer-events: none;
-}
-html[lang="en"] .media:has(img[src$=".svg"])::after { content: "Photo placeholder"; }
 
 /* ---------- Hero ---------- */
 .hero { padding-block: clamp(36px, 6vw, 80px) clamp(56px, 8vw, 104px); }
@@ -189,7 +181,6 @@ html[lang="en"] .media:has(img[src$=".svg"])::after { content: "Photo placeholde
 .hero__points li { display: inline-flex; align-items: center; gap: 8px; }
 .hero__points svg { width: 18px; height: 18px; color: var(--walnut); flex: none; }
 .hero__media { position: relative; }
-.hero__media .media::after { left: auto; right: 12px; }
 .hero__media .media { border-radius: 20px; box-shadow: var(--shadow); aspect-ratio: 4 / 3; }
 .hero__badge {
   position: absolute; right: 16px; top: 16px;

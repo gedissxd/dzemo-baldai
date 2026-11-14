@@ -33,13 +33,13 @@ Everything still to be filled in is highlighted in yellow on the page and marked
 
 ## Photos
 
-All images are currently drawn illustrations. While an image file ends in `.svg`, the page shows a "Vieta nuotraukai" label on it; the label disappears on its own once a real photo is used.
+All images are currently drawn illustrations, to be replaced with real photos.
 
 1. Save photos as JPG or WebP, landscape 4:3, about 1200 px wide (hero about 1600 px), ideally under 250 KB each.
 2. Put them in `assets/img/` (gallery photos in `assets/img/portfolio/`).
 3. Change the `src` of the matching `<img>` and update its `alt` text.
 
-Gallery items are the `<figure class="work" data-cat="…">` blocks in the `#darbai` section. Copy a block to add a project. `data-cat` decides which filter shows it: `virtuve`, `spinta`, `svetaine`, `darbo-kambarys`, `vaiko-kambarys`, `vonia`, `prieskambaris`. The current captions are samples. When real photos are in, delete the yellow `todo-note` paragraph above the gallery.
+Gallery items are the `<figure class="work" data-cat="…">` blocks in the `#darbai` section. Copy a block to add a project. `data-cat` decides which filter shows it: `virtuve`, `spinta`, `svetaine`, `darbo-kambarys`, `vaiko-kambarys`, `vonia`, `prieskambaris`. The current captions are samples.
 
 ## Quote form
 
