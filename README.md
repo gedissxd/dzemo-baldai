@@ -26,7 +26,6 @@ Everything still to be filled in is highlighted in yellow on the page and marked
 
 | What | Where |
 | --- | --- |
-| Exact address | Contact section; also the map `iframe` (`q=Klaipėda` → `q=Street+No,+Klaipėda`) |
 | Customer reviews | Section `#atsiliepimai` currently links to Facebook. Real reviews can be added as `<li class="quote">` cards inside a `<ul class="quotes">` |
 | Photos | See below |
 | Quote form inbox | See below |
